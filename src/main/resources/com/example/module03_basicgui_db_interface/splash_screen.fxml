@@ -5,24 +5,36 @@
 <?import javafx.scene.layout.ColumnConstraints?>
 <?import javafx.scene.layout.GridPane?>
 <?import javafx.scene.layout.RowConstraints?>
+<?import javafx.scene.text.Font?>
+<?import javafx.scene.text.Text?>
 
 
-<GridPane  xmlns="http://javafx.com/javafx/20.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.module03_basicgui_db_interface.SplashScreenController">
+<GridPane alignment="CENTER" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" style="-fx-background-color: BBE0BA;" stylesheets="@styling/style.css" xmlns="http://javafx.com/javafx/23.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.module03_basicgui_db_interface.SplashScreenController">
    <columnConstraints>
-      <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="300" />
+      <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="50.0" />
       <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" />
-      <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="300" />
+      <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="50.0" />
    </columnConstraints>
    <rowConstraints>
       <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
-      <RowConstraints minHeight="10.0" vgrow="SOMETIMES" />
+      <RowConstraints maxHeight="-Infinity" minHeight="-Infinity" vgrow="SOMETIMES" />
       <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
    </rowConstraints>
    <children>
-       <ImageView fitHeight="293.0" fitWidth="332.0" onMouseClicked="#clickme" pickOnBounds="true" preserveRatio="true" GridPane.columnIndex="1" GridPane.rowIndex="1">
+       <ImageView fitHeight="327.0" fitWidth="293.0" onMouseClicked="#clickme" pickOnBounds="true" preserveRatio="true" translateY="10.0" GridPane.columnIndex="1" GridPane.rowIndex="1">
            <image>
                <Image url="@images/suny_farmingdale.png" />
            </image>
        </ImageView>
+      <ImageView fitHeight="100.0" fitWidth="100.0" pickOnBounds="true" preserveRatio="true" translateX="96.5" translateY="5.0" GridPane.columnIndex="1" GridPane.rowIndex="1">
+         <image>
+            <Image url="@images/loading.gif" />
+         </image>
+      </ImageView>
+      <Text fill="#286800" stroke="TRANSPARENT" strokeLineJoin="ROUND" strokeType="INSIDE" strokeWidth="0.0" text="LOADING. . ." textAlignment="CENTER" translateY="5.0" underline="true" GridPane.columnIndex="1" GridPane.halignment="CENTER" GridPane.valignment="CENTER">
+         <font>
+            <Font name="Avenir Next Demi Bold" size="27.0" />
+         </font>
+      </Text>
    </children>
 </GridPane>

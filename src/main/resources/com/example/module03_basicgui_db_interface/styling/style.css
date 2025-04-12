@@ -11,8 +11,48 @@
     -fx-pref-height:40px;
 }
 
+.profile_btn {
+    -fx-background-color:#444;
+    -fx-font-family: "System";
+    -fx-font-style: bold;
+    -fx-font-size:14;
+    -fx-text-alignment: center;
+    -fx-text-fill:#fff;
+    -fx-alignment:CENTER;
+    -fx-background-radius:10;
+    -fx-pref-width:121px;
+    -fx-pref-height:38px;
+}
+
+.menu_bar {
+    -fx-background-color: #ADD8E6;
+    -fx-font-family: "Arial";
+    -fx-font-size: 14px;
+    -fx-text-fill: #000;
+    -fx-text-alignment: center;
+}
+
+.menu_item {
+    -fx-background-color: #c9fffc;
+    -fx-font-family: "Arial";
+    -fx-font-size: 14px;
+    -fx-text-fill: #000;
+    -fx-text-alignment: center;
+    -fx-alignment: CENTER;
+}
+
+.text_field {
+    -fx-border-color: black;
+    -fx-border-width: 2;
+    -fx-prompt-text-fill: DARKGRAY;
+    -fx-background-color: white;
+    -fx-border-radius: 5;
+    -fx-background-radius: 5;
+    -fx-font-family: "Arial";
+}
+
 .left_pane {
-    -fx-background-color:#f88;
+    -fx-background-color:#045955;
     -fx-pref-width:150px;
     -fx-pref-height:600px;
 }
@@ -20,7 +60,8 @@
 .bottom_pane {
     -fx-background-color:#f88;
 }
-.profile_pic{
-    -fx-stroke: #dedddc;
-    -fx-stroke-width: 2;
+
+.profile_pic {
+    -fx-stroke: white;
+    -fx-stroke-width: 3;
 }

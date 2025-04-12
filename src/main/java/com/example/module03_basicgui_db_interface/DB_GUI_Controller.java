@@ -12,35 +12,26 @@ import javafx.scene.image.Image;
 import javafx.scene.image.ImageView;
 import javafx.scene.input.MouseEvent;
 import javafx.stage.FileChooser;
-
 import java.io.File;
-import java.io.IOException;
 import java.net.URL;
 import java.util.ResourceBundle;
-
 
 public class DB_GUI_Controller implements Initializable {
 
     private final ObservableList<Person> data =
-            FXCollections.observableArrayList(
-                    new Person(1, "Jacob", "Smith", "CPIS", "CS"),
-                    new Person(2, "Jacob2", "Smith1", "CPIS1", "CS")
-
-            );
-
+            FXCollections.observableArrayList();
 
     @FXML
-    TextField first_name, last_name, department, major;
+    TextField first_name, last_name, department, major, course, studentYear;
     @FXML
     private TableView<Person> tv;
     @FXML
     private TableColumn<Person, Integer> tv_id;
     @FXML
-    private TableColumn<Person, String> tv_fn, tv_ln, tv_dept, tv_major;
+    private TableColumn<Person, String> tv_fn, tv_ln, tv_dept, tv_major, tv_course, tv_sy;
 
     @FXML
     ImageView img_view;
-
 
     @Override
     public void initialize(URL url, ResourceBundle resourceBundle) {
@@ -49,7 +40,8 @@ public class DB_GUI_Controller implements Initializable {
         tv_ln.setCellValueFactory(new PropertyValueFactory<>("lastName"));
         tv_dept.setCellValueFactory(new PropertyValueFactory<>("dept"));
         tv_major.setCellValueFactory(new PropertyValueFactory<>("major"));
-
+        tv_course.setCellValueFactory(new PropertyValueFactory<>("course"));
+        tv_sy.setCellValueFactory(new PropertyValueFactory<>("studentYear"));
 
         tv.setItems(data);
     }
@@ -58,13 +50,14 @@ public class DB_GUI_Controller implements Initializable {
     @FXML
     protected void addNewRecord() {
 
-
         data.add(new Person(
                 data.size()+1,
                 first_name.getText(),
                 last_name.getText(),
                 department.getText(),
-                major.getText()
+                major.getText(),
+                course.getText(),
+                studentYear.getText()
         ));
     }
 
@@ -74,6 +67,8 @@ public class DB_GUI_Controller implements Initializable {
         last_name.setText("");
         department.setText("");
         major.setText("");
+        course.setText("");
+        studentYear.setText("");
     }
 
     @FXML
@@ -92,6 +87,8 @@ public class DB_GUI_Controller implements Initializable {
         p2.setLastName(last_name.getText());
         p2.setDept(department.getText());
         p2.setMajor(major.getText());
+        p2.setCourse(course.getText());
+        p2.setStudentYear(studentYear.getText());
         data.remove(c);
         data.add(c,p2);
         tv.getSelectionModel().select(c);
@@ -103,8 +100,6 @@ public class DB_GUI_Controller implements Initializable {
         data.remove(p);
     }
 
-
-
     @FXML
     protected void showImage() {
         File file= (new FileChooser()).showOpenDialog(img_view.getScene().getWindow());
@@ -114,10 +109,6 @@ public class DB_GUI_Controller implements Initializable {
         }
     }
 
-
-
-
-
     @FXML
     protected void selectedItemTV(MouseEvent mouseEvent) {
         Person p= tv.getSelectionModel().getSelectedItem();
@@ -125,7 +116,7 @@ public class DB_GUI_Controller implements Initializable {
         last_name.setText(p.getLastName());
         department.setText(p.getDept());
         major.setText(p.getMajor());
-
-
+        course.setText(p.getCourse());
+        studentYear.setText(p.getStudentYear());
     }
 }

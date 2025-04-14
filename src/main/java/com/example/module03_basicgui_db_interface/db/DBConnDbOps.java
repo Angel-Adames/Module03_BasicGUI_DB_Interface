@@ -142,5 +142,25 @@ public class DBConnDbOps {
         }
     }
 
-    
+
+    public boolean verifyUserLogin(String trim, String password) {
+        try {
+            Connection conn = DriverManager.getConnection(DB_URL, USERNAME, PASSWORD);
+            String sql = "SELECT * FROM users WHERE email = ? AND password = ?";
+            PreparedStatement preparedStatement = conn.prepareStatement(sql);
+            preparedStatement.setString(1, trim);
+            preparedStatement.setString(2, password);
+
+            ResultSet resultSet = preparedStatement.executeQuery();
+            boolean isValid = resultSet.next(); // If there's a result, login is valid
+
+            preparedStatement.close();
+            conn.close();
+            return isValid;
+        } catch (SQLException e) {
+            e.printStackTrace();
+            return false; // Login failed due to an error
+
+        }
+    }
 }

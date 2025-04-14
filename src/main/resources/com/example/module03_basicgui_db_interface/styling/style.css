@@ -1,3 +1,9 @@
+/*
+    Light Theme for 'db_interface_gui.fxml'
+    Provides Changes forFor Every Element in UI
+    Blue White Color Scheme
+*/
+
 .nav_btn {
     -fx-background-color:#444;
     -fx-cursor:hand;
@@ -14,12 +20,11 @@
 .profile_btn {
     -fx-background-color:#444;
     -fx-font-family: "System";
-    -fx-font-style: bold;
-    -fx-font-size:14;
+    -fx-font-size:14px;
     -fx-text-alignment: center;
     -fx-text-fill:#fff;
     -fx-alignment:CENTER;
-    -fx-background-radius:10;
+    -fx-background-radius:10px;
     -fx-pref-width:121px;
     -fx-pref-height:38px;
 }
@@ -41,13 +46,14 @@
     -fx-alignment: CENTER;
 }
 
-.text_field {
+.text-field {
     -fx-border-color: black;
-    -fx-border-width: 2;
+    -fx-border-width: 1;
     -fx-prompt-text-fill: DARKGRAY;
     -fx-background-color: white;
-    -fx-border-radius: 5;
-    -fx-background-radius: 5;
+    -fx-text-fill: black;
+    -fx-border-radius: 3;
+    -fx-background-radius: 3;
     -fx-font-family: "Arial";
 }
 

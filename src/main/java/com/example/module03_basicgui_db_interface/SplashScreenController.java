@@ -6,13 +6,22 @@ import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.scene.image.ImageView;
 import javafx.scene.input.MouseEvent;
-
 import java.io.IOException;
 
 public class SplashScreenController {
 
+    /**
+     * Public no-argument constructor required by FXMLLoader.
+     */
+    public SplashScreenController() {
+    }
+
+    /**
+     * Handles the splash screen by getting imageView for the main application
+     * @param event handles the image for the main scene
+     */
     @FXML
-    void clickme(MouseEvent event) {
+    void clickMe(MouseEvent event) {
         Parent newRoot;
         Scene scene= ((ImageView)event.getSource()).getParent().getScene();
 
@@ -23,7 +32,5 @@ public class SplashScreenController {
         }
 
         scene.setRoot(newRoot);
-
     }
-
 }

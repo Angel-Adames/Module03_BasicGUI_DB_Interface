@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.TextArea?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.text.Font?>
+<?import javafx.scene.text.Text?>
+
+<VBox fx:id="aboutPane" prefHeight="600.0" prefWidth="420.0" style="-fx-background-color: #E8E8E8;" xmlns="http://javafx.com/javafx/23.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.module03_basicgui_db_interface.AboutPageController">
+    <Text strokeMiterLimit="5.0" strokeType="OUTSIDE" strokeWidth="0.0" text="About This Project" textAlignment="CENTER" wrappingWidth="400.0" VBox.vgrow="NEVER">
+        <VBox.margin>
+            <Insets bottom="20.0" left="10.0" right="10.0" top="20.0" />
+        </VBox.margin>
+        <font>
+            <Font name="Avenir Heavy Oblique" size="20.0" />
+        </font>
+    </Text>
+    <TextArea fx:id="aboutPage" editable="false" prefHeight="340.0" prefWidth="400.0" text="Throughout the homework of implementing the requirements that the professor requested to be added and changed for this Java / Database project were many, though I overcame a few and am still handling them or haven't gotten around to it yet. I have finished them and am proud to say its functional, with UI features added to it.&#10;CHALLENGES: &#10;1) Connecting database to the shell code project &#10;2) Connecting the shell code to the database interface project &#10;3) Having the correct style classes and format for the numerous elements in the UI for Interface &#10;4) Implementing a way to have a light mode &amp; dark mode as a button that changes colors for the Interface &#10;5) Deciding on design for colors for all elements, and spacing, functions, features, etc. 6) Deciding on what extra buttons and/or columns to put for the database &#10;7) Actually having the code open the .fxml files properly&#10;HOW I COMPLETED THEM: &#10;1) I had to remove the premade IP address, and made it open to every possible range (0-255) and testing it with the help with the professor, it connected properly 2) I had to copy the path reference for the file that contains the class DBConnDbOps.java and paste it inside the file for the DB_Interface file, which makes it connect. &#10;3) I am still working on it, currently for the splash screen, the logo isn't in the center properly, and the main menu has white spaces that I need to fix with the width and height of certain elements. I dont have the Login screen added yet. Now it's a square scene (everything is even) that loads with a .gif in the middle, then fades into the login screen, in which after loads the main menu.&#10;4) Haven’t started it as of writing, I am planning to write two css style sheets for the same .fxml file, and the way to change it is through a button that once clicked, it will change the theme to dark and the image for the button will change from a sun to a crescent moon, and vise versa. Haven’t added it yet. I have written the dark_theme.css in a separate css file, as well as fix up the original, and linked both to a small button with a sun and crescent icon that switches between each theme, using two if statements in the code.&#10;5) Decided for light to have some color, blue, which is my favorite color, and easy to showcase different shades that work well with white and black. It will be vice versa for dark mode with some blue too. Both themes have dark blue involved. Dark Theme essentially flips the background and texts and most of the elements, including the text fields, buttons, table view, columns, and menu bar text.&#10;6) I added Student Year for an extra column to add in the database, and for buttons, I added a Profile button for the Interface that lets you change the image for the profile picture. However for buttons, I might keep it the way it is, every main function is there, I can't think of anything else to add. Added extra features, such as the buttons in the menu items Profile (same as hitting the button) and Login (brings you back to the Login page [you cannot go back without logging in again]), and Close. Also the About page on the Help section on Menu Bar. I added Keyboard shortcuts too on the main menu, in which you would use Ctrl+(A,C,E,D) each corresponding to each of the buttons to add to the database." wrapText="true" VBox.vgrow="ALWAYS">
+        <VBox.margin>
+            <Insets bottom="10.0" left="10.0" right="10.0" top="10.0" />
+        </VBox.margin>
+      <font>
+         <Font size="11.0" />
+      </font>
+    </TextArea>
+</VBox>

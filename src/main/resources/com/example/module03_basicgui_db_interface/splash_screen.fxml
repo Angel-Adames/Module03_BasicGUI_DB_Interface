@@ -8,7 +8,6 @@
 <?import javafx.scene.text.Font?>
 <?import javafx.scene.text.Text?>
 
-
 <GridPane alignment="CENTER" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" style="-fx-background-color: BBE0BA;" stylesheets="@styling/style.css" xmlns="http://javafx.com/javafx/23.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.module03_basicgui_db_interface.SplashScreenController">
    <columnConstraints>
       <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="50.0" />
@@ -21,7 +20,7 @@
       <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
    </rowConstraints>
    <children>
-       <ImageView fitHeight="327.0" fitWidth="293.0" onMouseClicked="#clickme" pickOnBounds="true" preserveRatio="true" translateY="10.0" GridPane.columnIndex="1" GridPane.rowIndex="1">
+       <ImageView fitHeight="327.0" fitWidth="293.0" onMouseClicked="#clickMe" pickOnBounds="true" preserveRatio="true" translateY="10.0" GridPane.columnIndex="1" GridPane.rowIndex="1">
            <image>
                <Image url="@images/suny_farmingdale.png" />
            </image>

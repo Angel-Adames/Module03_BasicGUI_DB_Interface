@@ -18,140 +18,135 @@
 <?import javafx.scene.text.Font?>
 <?import javafx.scene.text.Text?>
 
-<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="539.0" prefWidth="965.0" xmlns="http://javafx.com/javafx/23.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.module03_basicgui_db_interface.DB_GUI_Controller">
-   <children>
-      <BorderPane layoutX="-2.0" layoutY="-1.0" prefHeight="535.0" prefWidth="938.0" style="-fx-background-color: #479490;" stylesheets="@styling/style.css">
-         <top>
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" onKeyPressed="#keyboardShortcutController" prefHeight="539.0" prefWidth="965.0" xmlns="http://javafx.com/javafx/23.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.module03_basicgui_db_interface.DB_GUI_Controller">
+    <stylesheets>
+        <URL value="@styling/style.css" />
+    </stylesheets>
+    <BorderPane layoutX="-2.0" layoutY="-1.0" prefHeight="535.0" prefWidth="938.0" style="-fx-background-color: #479490;" stylesheets="@styling/style.css">
+        <top>
             <MenuBar styleClass="menu_bar" stylesheets="@styling/style.css" BorderPane.alignment="CENTER">
-              <menus>
                 <Menu mnemonicParsing="false" text="File">
-                  <items>
-                    <MenuItem mnemonicParsing="false" onAction="#closeApplication" text="Add File" />
-                  </items>
+                    <MenuItem mnemonicParsing="false" text="Add File" />
                 </Menu>
                 <Menu mnemonicParsing="false" text="Edit">
-                  <items>
                     <MenuItem mnemonicParsing="false" text="Edit Data" />
-                  </items>
                 </Menu>
                 <Menu mnemonicParsing="false" text="Add">
-                  <items>
                     <MenuItem mnemonicParsing="false" text="Add Data" />
-                  </items>
                 </Menu>
-                  <Menu mnemonicParsing="false" text="Settings">
-                     <items>
-                        <MenuItem mnemonicParsing="false" text="Profile" />
-                        <MenuItem mnemonicParsing="false" text="Login" />
-                        <MenuItem mnemonicParsing="false" text="Close" />
-                     </items>
-                  </Menu>
-                  <Menu mnemonicParsing="false" text="Help">
-                     <items>
-                        <MenuItem mnemonicParsing="false" text="About" />
-                     </items>
-                  </Menu>
-              </menus>
+                <Menu mnemonicParsing="false" text="Settings">
+                    <MenuItem fx:id="profileMenuItem" mnemonicParsing="false" onAction="#openProfilePage" text="Profile" />
+                    <MenuItem mnemonicParsing="false" onAction="#openLoginPage" text="Login" />
+                    <MenuItem mnemonicParsing="false" onAction="#closeApplication" text="Close" />
+                </Menu>
+                <Menu mnemonicParsing="false" text="Help">
+                    <MenuItem fx:id="aboutMenuItem" mnemonicParsing="false" onAction="#aboutPage" text="About" />
+                </Menu>
             </MenuBar>
-         </top>
-         <right>
-            <TableView fx:id="tv" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" onMouseClicked="#selectedItemTV" prefHeight="510.0" prefWidth="645.0" stylesheets="@styling/style.css" BorderPane.alignment="CENTER">
+        </top>
+        <right>
+          <TableView fx:id="tv" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" onMouseClicked="#selectedItemTV" prefHeight="510.0" prefWidth="645.0" stylesheets="@styling/style.css" BorderPane.alignment="CENTER">
               <columns>
-                <TableColumn fx:id="tv_id" prefWidth="32.0" text="ID" />
-                <TableColumn fx:id="tv_fn" prefWidth="87.0" text="First Name" />
+                  <TableColumn fx:id="tv_id" prefWidth="32.0" text="ID" />
+                  <TableColumn fx:id="tv_fn" prefWidth="87.0" text="First Name" />
                   <TableColumn fx:id="tv_ln" prefWidth="83.0" text="Last Name" />
                   <TableColumn fx:id="tv_dept" prefWidth="107.0" text="Department" />
                   <TableColumn fx:id="tv_major" prefWidth="46.0" text="Major" />
                   <TableColumn fx:id="tv_course" prefWidth="163.0" text="Course" />
                   <TableColumn fx:id="tv_sy" prefWidth="126.0" text="Student Year" />
               </columns>
-            </TableView>
-         </right>
-         <left>
+          </TableView>
+        </right>
+        <left>
             <VBox prefHeight="264.0" prefWidth="151.0" styleClass="left_pane" BorderPane.alignment="CENTER">
-               <children>
-                  <AnchorPane prefHeight="149.0" prefWidth="150.0" stylesheets="@styling/style.css">
-                     <children>
-                        <ImageView fx:id="img_view" fitHeight="119.0" fitWidth="122.0" layoutX="15.0" layoutY="14.0" onMouseClicked="#showImage" pickOnBounds="true" preserveRatio="true" styleClass="profile_pic">
-                           <image>
-                              <Image url="@images/profile.png" />
-                           </image></ImageView>
-                     </children>
-                  </AnchorPane>
-                  <ButtonBar prefHeight="40.0" prefWidth="200.0" stylesheets="@styling/style.css" />
-                  <Button alignment="CENTER" contentDisplay="CENTER" minWidth="-Infinity" mnemonicParsing="false" onAction="#clearForm" prefWidth="100.0" styleClass="profile_btn" text="Profile" textAlignment="CENTER">
-                     <font>
-                        <Font name="System Bold" size="13.0" />
-                     </font>
-                     <VBox.margin>
-                        <Insets left="15.55" top="-40.0" />
-                     </VBox.margin>
-                  </Button>
-               </children></VBox>
-         </left>
-         <center>
-            <VBox maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="476.0" prefWidth="170.0" style="-fx-background-color: #71bdb9;" stylesheets="@styling/style.css" BorderPane.alignment="CENTER">
-               <children>
-                  <Text fill="#616161" strokeType="OUTSIDE" strokeWidth="0.0" style="-fx-font-style: BOLD;" text="ADD DATA BELOW:" textOrigin="CENTER" translateX="14.0" translateY="1.0" wrappingWidth="143.31298828125">
-                     <font>
-                        <Font name="Avenir Book" size="15.0" />
-                     </font>
-                     <VBox.margin>
-                        <Insets />
-                     </VBox.margin>
-                  </Text>
-                  <TextField fx:id="first_name" promptText="First Name" styleClass="text_field">
-                     <VBox.margin>
-                        <Insets bottom="5.0" left="10.0" right="10.0" top="10.0" />
-                     </VBox.margin>
-                  </TextField>
-                  <TextField fx:id="last_name" promptText="Last Name" styleClass="text_field">
-                     <VBox.margin>
-                        <Insets bottom="5.0" left="10.0" right="10.0" top="5.0" />
-                     </VBox.margin>
-                  </TextField>
-                  <TextField fx:id="department" promptText="Department" styleClass="text_field">
-                     <VBox.margin>
-                        <Insets bottom="5.0" left="10.0" right="10.0" top="5.0" />
-                     </VBox.margin>
-                  </TextField>
-                  <TextField fx:id="major" promptText="Major" styleClass="text_field">
-                     <VBox.margin>
-                        <Insets bottom="5.0" left="10.0" right="10.0" top="5.0" />
-                     </VBox.margin>
-                  </TextField>
-                  <TextField fx:id="course" layoutX="29.0" layoutY="150.0" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="29.0" prefWidth="148.0" promptText="Course" styleClass="text_field" translateX="10.5">
-                     <VBox.margin>
-                        <Insets top="5.0" />
-                     </VBox.margin>
-                  </TextField>
-                  <TextField fx:id="studentYear" layoutX="29.0" layoutY="150.0" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="29.0" prefWidth="148.0" promptText="Student Year" styleClass="text_field" translateX="10.5">
-                     <VBox.margin>
-                        <Insets bottom="-40.0" top="10.0" />
-                     </VBox.margin>
-                  </TextField>
-                  <Button minWidth="-Infinity" mnemonicParsing="false" onAction="#clearForm" styleClass="nav_btn" text="Clear">
-                     <VBox.margin>
-                        <Insets bottom="10.0" left="10.0" right="10.0" top="60.0" />
-                     </VBox.margin></Button>
-                <Button fx:id="addBtn" mnemonicParsing="false" onAction="#addNewRecord" styleClass="nav_btn" text="Add">
-                     <VBox.margin>
-                        <Insets bottom="10.0" left="10.0" right="10.0" top="10.0" />
-                     </VBox.margin></Button>
-                  <Button mnemonicParsing="false" onAction="#editRecord" styleClass="nav_btn" text="Edit">
-                     <VBox.margin>
-                        <Insets bottom="10.0" left="10.0" right="10.0" top="10.0" />
-                     </VBox.margin></Button>
-                  <Button mnemonicParsing="false" onAction="#deleteRecord" styleClass="nav_btn" text="Delete">
-                     <VBox.margin>
-                        <Insets bottom="10.0" left="10.0" right="10.0" top="10.0" />
-                     </VBox.margin></Button>
-               </children>
+                <AnchorPane prefHeight="149.0" prefWidth="150.0" stylesheets="@styling/style.css">
+                    <ImageView fx:id="img_view" fitHeight="119.0" fitWidth="122.0" layoutX="15.0" layoutY="14.0" pickOnBounds="true" preserveRatio="true" styleClass="profile_pic">
+                        <Image url="@images/profile.png" />
+                    </ImageView>
+                </AnchorPane>
+                <ButtonBar prefHeight="40.0" prefWidth="200.0" stylesheets="@styling/style.css" />
+                <Button fx:id="profileBtn" alignment="CENTER" contentDisplay="CENTER" minWidth="-Infinity" mnemonicParsing="false" onAction="#openProfilePage" prefWidth="100.0" styleClass="profile_btn" text="Profile" textAlignment="CENTER">
+                  <font>
+                      <Font name="System Bold" size="13.0" />
+                  </font>
+                  <VBox.margin>
+                      <Insets left="15.55" top="-40.0" />
+                  </VBox.margin>
+                </Button>
             </VBox>
-         </center>
-      </BorderPane>
-   </children>
-   <stylesheets>
-      <URL value="@styling/style.css" />
-   </stylesheets>
+        </left>
+        <center>
+            <VBox maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="476.0" prefWidth="170.0" style="-fx-background-color: #71bdb9;" stylesheets="@styling/style.css" BorderPane.alignment="CENTER">
+                <Text fill="#616161" strokeType="OUTSIDE" strokeWidth="0.0" text="ADD DATA BELOW:" textOrigin="CENTER" translateX="14.0" translateY="1.0" wrappingWidth="143.31298828125">
+                  <font>
+                      <Font name="Avenir Book" size="15.0" />
+                  </font>
+                  <VBox.margin>
+                      <Insets />
+                  </VBox.margin>
+                </Text>
+                <TextField fx:id="first_name" promptText="First Name">
+                  <VBox.margin>
+                      <Insets bottom="5.0" left="10.0" right="10.0" top="10.0" />
+                  </VBox.margin>
+                </TextField>
+                <TextField fx:id="last_name" promptText="Last Name">
+                  <VBox.margin>
+                      <Insets bottom="5.0" left="10.0" right="10.0" top="5.0" />
+                  </VBox.margin>
+                </TextField>
+                <TextField fx:id="department" promptText="Department">
+                  <VBox.margin>
+                      <Insets bottom="5.0" left="10.0" right="10.0" top="5.0" />
+                  </VBox.margin>
+                </TextField>
+                <TextField fx:id="major" promptText="Major">
+                  <VBox.margin>
+                      <Insets bottom="5.0" left="10.0" right="10.0" top="5.0" />
+                  </VBox.margin>
+                </TextField>
+                <TextField fx:id="course" layoutX="29.0" layoutY="150.0" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="29.0" prefWidth="148.0" promptText="Course" translateX="10.5">
+                  <VBox.margin>
+                      <Insets top="5.0" />
+                  </VBox.margin>
+                </TextField>
+                <TextField fx:id="studentYear" layoutX="29.0" layoutY="150.0" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="29.0" prefWidth="148.0" promptText="Student Year" translateX="10.5">
+                  <VBox.margin>
+                      <Insets bottom="-40.0" top="10.0" />
+                  </VBox.margin>
+                </TextField>
+                <Button minWidth="-Infinity" mnemonicParsing="false" onAction="#clearForm" styleClass="nav_btn" text="Clear">
+                  <VBox.margin>
+                      <Insets bottom="10.0" left="10.0" right="10.0" top="60.0" />
+                  </VBox.margin>
+                </Button>
+                <Button fx:id="addBtn" mnemonicParsing="false" onAction="#addNewRecord" styleClass="nav_btn" text="Add">
+                    <VBox.margin>
+                        <Insets bottom="10.0" left="10.0" right="10.0" top="10.0" />
+                    </VBox.margin>
+                </Button>
+                <Button mnemonicParsing="false" onAction="#editRecord" styleClass="nav_btn" text="Edit">
+                  <VBox.margin>
+                      <Insets bottom="10.0" left="10.0" right="10.0" top="10.0" />
+                  </VBox.margin>
+                </Button>
+                <Button mnemonicParsing="false" onAction="#deleteRecord" styleClass="nav_btn" text="Delete">
+                  <VBox.margin>
+                      <Insets bottom="10.0" left="10.0" right="10.0" top="10.0" />
+                  </VBox.margin>
+                </Button>
+            </VBox>
+        </center>
+    </BorderPane>
+   <Button fx:id="themeToggleBtn" alignment="CENTER" contentDisplay="CENTER" layoutX="897.0" layoutY="-14.0" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" mnemonicParsing="false" onAction="#handleThemeToggle" prefHeight="22.0" prefWidth="22.0" style="-fx-background-color: #E9E9E9; -fx-border-color: #71bdb9; -fx-border-width: 1.5; -fx-border-radius: 2;" stylesheets="@styling/style.css" text="☼" textAlignment="CENTER" translateX="39.0" translateY="17.0" wrapText="true">
+      <opaqueInsets>
+         <Insets />
+      </opaqueInsets>
+      <padding>
+         <Insets right="0.1" top="-3.0" />
+      </padding>
+      <font>
+         <Font size="20.0" />
+      </font>
+   </Button>
 </AnchorPane>

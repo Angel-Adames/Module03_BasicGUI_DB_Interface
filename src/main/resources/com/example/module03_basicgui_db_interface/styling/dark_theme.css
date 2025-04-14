@@ -1,0 +1,97 @@
+/*
+    Dark Theme for 'db_interface_gui.fxml'
+    Switches Text to White & Black Background
+*/
+
+.root .anchor-pane {
+    -fx-background-color: #2b2b2b;
+}
+.root .text-field {
+           -fx-background-color: #3a3a3a;
+           -fx-text-fill: white;
+           -fx-prompt-text-fill: #888888;
+}
+
+.vbox {
+    -fx-background-color: #2b2b2b;
+}
+
+.table-view .column-header-background {
+    -fx-background-color: #333333;
+}
+
+.table-view .column-header, .table-view .filler {
+    -fx-background-color: #333333;
+    -fx-border-color: transparent;
+}
+
+.table-view .column-header .label {
+    -fx-text-fill: white;
+}
+
+.table-row-cell:odd {
+    -fx-background-color: #333333;
+}
+
+.table-row-cell:even {
+    -fx-background-color: #333333;
+}
+
+.label {
+    -fx-text-fill: white;
+}
+
+.button {
+    -fx-background-color: #444444;
+    -fx-text-fill: white;
+    -fx-border-width: 1px;
+    -fx-border-radius: 2px;
+}
+
+.theme-toggle-btn {
+    -fx-text-fill: black;
+}
+
+.text-field {
+    -fx-background-color: #3a3a3a;
+    -fx-text-fill: white;
+    -fx-prompt-text-fill: #888888;
+}
+
+.table-view {
+    -fx-background-color: grey;
+    -fx-table-cell-border-color: transparent;
+    -fx-control-inner-background: #2b2b2b;
+}
+
+.text-field {
+    -fx-background-color: BLACK;
+    -fx-text-fill: WHITE;
+    -fx-prompt-text-fill: #888888;
+}
+
+.menu-bar {
+    -fx-background-color: #07395C;
+}
+
+.menu-bar .menu-item {
+    -fx-text-fill: white;
+}
+
+.menu-bar .label {
+    -fx-text-fill: white;
+}
+
+.table-row-cell {
+    -fx-background-color: #2b2b2b;
+}
+
+.table-cell {
+    -fx-text-fill: white;
+}
+
+.custom-vbox {
+    -fx-background-color: #71bdb9;
+    -fx-padding: 10px;
+    -fx-spacing: 10px;
+}
